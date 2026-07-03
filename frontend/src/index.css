@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at 15% -10%, rgba(13, 63, 148, 0.55) 0%, transparent 45%),
+    radial-gradient(circle at 100% 10%, rgba(220, 30, 42, 0.35) 0%, transparent 40%),
+    #0A1730;
+  overflow-x: hidden;
+}
+
+/* Marca d'água do logo "Semana Demá PR²" fixa atrás de todas as telas,
+   bem sutil para não competir com o conteúdo. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/logo-semana-dema.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(60vw, 780px);
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
